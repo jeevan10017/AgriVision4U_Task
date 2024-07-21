@@ -1,8 +1,11 @@
 ﻿# AgriVision4U-Task
 
-![Skill Portal](./src/assets/dashboard.png)
+ 
+(![favicon ico (2) (1)](https://github.com/user-attachments/assets/4e7d748d-63a8-4fb5-bd5c-b4b973fc8134)
 
-Skill Portal is a full-stack application designed to provide a comprehensive dashboard for skill assessments. This project includes user authentication, profile management, and skill tracking features. The frontend is built using React, while the backend is powered by Express.js, with MongoDB serving as the database.
+
+
+This Task is a full-stack application designed to provide a comprehensive dashboard for marks assessments. This project includes user authentication, profile management, and marks tracking features. The frontend is built using React, while the backend is powered by Express.js, with MongoDB serving the database.
 
 ## Features
 
@@ -106,19 +109,36 @@ Skill Portal is a full-stack application designed to provide a comprehensive das
 
 ### Dashboard
 
-![Dashboard](./src/assets/dashboard.png)
+![Screenshot 2024-07-21 183222](https://github.com/user-attachments/assets/b4679ee9-10b5-4e64-b42f-881087ea449b)
+
+
+
+![image](https://github.com/user-attachments/assets/c763faba-f000-4890-beef-4232c1513ceb)
+
+
+
+
+![Screenshot 2024-07-21 183431](https://github.com/user-attachments/assets/f76ad482-d6d6-42a7-a7b2-001d13303e43)
+
+
 
 ### Login
 
-![Login](./src/assets/login.png)
+![Uploading Screenshot 2024-07-21 182722 (1) (1).png…]()
+
+
 
 ### Registration
 
-![Registration](./src/assets/register.png)
+![Screenshot 2024-07-21 183138 (1)](https://github.com/user-attachments/assets/8cfaf278-4a85-4018-aa53-2ccd11855bff)
+
+
 
 ## Video Demo
 
-[![Skill Portal Video Demo](./src/assets/video-thumbnail.png)](https://www.youtube.com/watch?v=your_video_id)
+![Screenshot 2024-07-21 183222](https://github.com/user-attachments/assets/ad0b756d-6601-4f7e-aa0c-cdf89ea8059e)
+)]([https://youtu.be/UxBiRgZ1WQ8])
+
 
 ## License
 
