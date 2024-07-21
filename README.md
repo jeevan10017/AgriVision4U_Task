@@ -23,7 +23,6 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 - [Technologies Used](#technologies-used)
 - [Screenshots](#screenshots)
 - [Video Demo](#video-demo)
-- [License](#license)
 
 ## Installation
 
@@ -139,7 +138,3 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 [![Watch the video](https://img.youtube.com/vi/UxBiRgZ1WQ8/maxresdefault.jpg)](https://www.youtube.com/watch?v=UxBiRgZ1WQ8)
 
 
-
-## License
-
-This project is licensed under the MIT License.
