@@ -65,7 +65,7 @@ const RegisterForm = () => {
       </div>
       {error && <p className="error">{error}</p>}
       {success && <p className="success">{success}</p>}
-      <button type="submit">Register</button>
+      <button className="newBtn" type="submit">Register</button>
       <p>
         Already have an account? <a href="/login">Login</a>
       </p>

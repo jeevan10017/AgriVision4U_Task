@@ -12,7 +12,7 @@ import { AuthContext } from './authContext';
 
 const initialData = [
   { name: 'Initial', classAverage: 0, userScore: 0 },
-  { name: 'First Test', classAverage: 81, userScore: 76 },
+  { name: 'Initial Test', classAverage: 81, userScore: 76 },
 ];
 
 const COLORS = ['#0088FE', '#FF8042'];

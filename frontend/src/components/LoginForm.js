@@ -43,7 +43,7 @@ const LoginForm = () => {
         />
       </div>
       {error && <p className="error">{error}</p>}
-      <button type="submit">Login</button>
+      <button className="newBtn" type="submit">Login</button>
       <p>
         Don't have an account? <a href="/register">Register</a>
       </p>

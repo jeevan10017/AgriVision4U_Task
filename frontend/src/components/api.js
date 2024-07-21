@@ -1,20 +1,15 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
 API.interceptors.request.use((req) => {
-  const token = localStorage.getItem('token');
-  if (token) {
-    req.headers.Authorization = `Bearer ${token}`;
+  if (localStorage.getItem('profile')) {
+    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
   }
   return req;
 });
 
-export const register = (userData) => API.post('/auth/register', userData);
-export const login = (userData) => API.post('/auth/login', userData);
-export const getSkills = () => API.get('/skills');
-export const addSkill = (skillData) => API.post('/skills/add', skillData);
-export const updateSkill = (id, skillData) => API.put(`/skills/update/${id}`, skillData);
-export const deleteSkill = (id) => API.delete(`/skills/delete/${id}`);
-export const updateUserData = (userData) => API.put('/users/update', userData);
-export const getUserData = () => API.get('/users/data');
+export const register = (formData) => API.post('/api/auth/register', formData);
+export const login = (formData) => API.post('/api/auth/login', formData);
+export const updateProfile = (formData) => API.put('/api/users/update', formData);
+export const getProfile = () => API.get('/api/users/profile');

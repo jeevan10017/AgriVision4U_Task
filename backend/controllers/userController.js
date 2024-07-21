@@ -1,6 +1,4 @@
-
 const User = require('../models/User');
-
 
 exports.updateData = async (req, res) => {
   const { userId } = req.user;
@@ -13,7 +11,6 @@ exports.updateData = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
 
 exports.getData = async (req, res) => {
   const { userId } = req.user;
