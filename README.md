@@ -136,8 +136,8 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 
 ## Video Demo
 
-![Screenshot 2024-07-21 183222](https://github.com/user-attachments/assets/ad0b756d-6601-4f7e-aa0c-cdf89ea8059e)
-)]([https://youtu.be/UxBiRgZ1WQ8])
+[![Watch the video](https://img.youtube.com/vi/UxBiRgZ1WQ8/maxresdefault.jpg)](https://www.youtube.com/watch?v=UxBiRgZ1WQ8)
+
 
 
 ## License
