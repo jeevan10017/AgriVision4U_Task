@@ -57,7 +57,7 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 5. Start the backend server:
 
     ```bash
-    npm start
+    npm server.js
     ```
 
 ### Frontend
