@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import {
   LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip,
   PieChart, Pie, Cell, BarChart, Bar, Legend, ResponsiveContainer
@@ -8,7 +7,8 @@ import './Dashboard.css';
 import achievementIcon from './assets/achievementicon.png';
 import axios from 'axios';
 import Joyride from 'react-joyride';
-import { AuthContext } from './authContext'; 
+import { AuthContext } from './authContext';
+import { toPng } from 'html-to-image'; 
 
 const initialData = [
   { name: 'Initial', classAverage: 0, userScore: 0 },
@@ -28,8 +28,8 @@ const Dashboard = () => {
   const [mathScore, setMathScore] = useState(0);
   const [csScore, setCsScore] = useState(0);
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const chartRef = useRef(); 
 
- 
   const email = user?.email;
 
   useEffect(() => {
@@ -139,9 +139,33 @@ const Dashboard = () => {
     },
   ];
 
+  const handleShare = async () => {
+    try {
+      const dataUrl = await toPng(chartRef.current);
+      if (navigator.share) {
+        await navigator.share({
+          title: 'My Progress',
+          text: 'Check out my progress on Skill Test!',
+          files: [new File([await (await fetch(dataUrl)).blob()], 'my-progress.png', { type: 'image/png' })],
+        });
+      } else {
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'my-progress.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } catch (error) {
+      console.error('Error sharing progress', error);
+    }
+  };
+
   return (
     <div className="dashboard">
       <Joyride steps={steps} continuous={true} showProgress={true} showSkipButton={true} />
+
+      <button className="share-button" onClick={handleShare}>Share</button> {/* Share button at top right */}
 
       <div className="statistics">
         <div className="stat-item">
@@ -264,10 +288,10 @@ const Dashboard = () => {
         </div>
       )}
 
-      <div className="charts">
+      <div className="charts" ref={chartRef}> {/* Add ref to chart div */}
         <div className="chart">
           <h3>Comparison Graph</h3>
-          <ResponsiveContainer width="95%" height={350}  >
+          <ResponsiveContainer width="95%" height={350}>
             <LineChart data={data}>
               <Line type="monotone" dataKey="classAverage" stroke="#7ED6DF" name="Class Average" />
               <Line type="monotone" dataKey="userScore" stroke="#82ca9d" name="User Score" />
