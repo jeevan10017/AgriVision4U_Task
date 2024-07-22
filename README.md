@@ -1,7 +1,8 @@
 ﻿# AgriVision4U-Task
 
  
-![favicon ico (2) (1)](https://github.com/user-attachments/assets/4e7d748d-63a8-4fb5-bd5c-b4b973fc8134)
+![dashboard](https://github.com/user-attachments/assets/e02f8851-52d7-4176-b861-adc48110e1cc)
+
 
 
 
@@ -14,6 +15,7 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 - Skill Tracking and Analysis
 - Dynamic Charts and Graphs
 - Responsive Design
+- Share facility
 
 ## Table of Contents
 
