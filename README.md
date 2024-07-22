@@ -1,7 +1,7 @@
 ﻿# AgriVision4U-Task
 
  
-(![favicon ico (2) (1)](https://github.com/user-attachments/assets/4e7d748d-63a8-4fb5-bd5c-b4b973fc8134)
+![favicon ico (2) (1)](https://github.com/user-attachments/assets/4e7d748d-63a8-4fb5-bd5c-b4b973fc8134)
 
 
 
@@ -31,7 +31,7 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/skill-portal.git
+    git clone https://github.com/your-username/AgriVision4U_Task.git
     ```
 
 2. Navigate to the backend directory:
@@ -57,7 +57,7 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 5. Start the backend server:
 
     ```bash
-    npm start
+    npm server.js
     ```
 
 ### Frontend
