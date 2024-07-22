@@ -39,7 +39,7 @@ This Task is a full-stack application designed to provide a comprehensive dashbo
 2. Navigate to the backend directory:
 
     ```bash
-    cd skill-portal/backend
+    cd AgriVision4U_Task/backend
     ```
 
 3. Install dependencies:
