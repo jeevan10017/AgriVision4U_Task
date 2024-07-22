@@ -95,6 +95,7 @@
   transition: background-color 0.3s ease;
 }
 
+
 .btn:hover {
   background-color: #1e680f;
 }
@@ -186,6 +187,17 @@
   padding: 20px;
 } */
 
+.update-average-button,
+.enter-score-button{
+  background: linear-gradient(135deg, #0088FE, #00C6FF);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 20px;
+}
 .share-button {
   position: absolute;
   top: 20px;

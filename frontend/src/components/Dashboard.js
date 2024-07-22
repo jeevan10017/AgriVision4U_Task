@@ -8,7 +8,7 @@ import achievementIcon from './assets/achievementicon.png';
 import axios from 'axios';
 import Joyride from 'react-joyride';
 import { AuthContext } from './authContext';
-import { toPng } from 'html-to-image'; 
+import { toPng } from 'html-to-image';
 
 const initialData = [
   { name: 'Initial', classAverage: 0, userScore: 0 },
@@ -28,7 +28,7 @@ const Dashboard = () => {
   const [mathScore, setMathScore] = useState(0);
   const [csScore, setCsScore] = useState(0);
   const [isFormVisible, setIsFormVisible] = useState(false);
-  const chartRef = useRef(); 
+  const dashboardRef = useRef(null); // Create a ref for the entire dashboard
 
   const email = user?.email;
 
@@ -141,31 +141,38 @@ const Dashboard = () => {
 
   const handleShare = async () => {
     try {
-      const dataUrl = await toPng(chartRef.current);
+      const dataUrl = await toPng(dashboardRef.current, {
+        cacheBust: true,
+        backgroundColor: 'white',
+      });
       if (navigator.share) {
+        const response = await fetch(dataUrl);
+        const blob = await response.blob();
+        const file = new File([blob], 'dashboard.png', { type: 'image/png' });
+
         await navigator.share({
-          title: 'My Progress',
-          text: 'Check out my progress on Skill Test!',
-          files: [new File([await (await fetch(dataUrl)).blob()], 'my-progress.png', { type: 'image/png' })],
+          title: 'My Dashboard',
+          text: 'Check out my Skill Test dashboard!',
+          files: [file],
         });
       } else {
         const link = document.createElement('a');
         link.href = dataUrl;
-        link.download = 'my-progress.png';
+        link.download = 'dashboard.png';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
       }
     } catch (error) {
-      console.error('Error sharing progress', error);
+      console.error('Error sharing dashboard', error);
     }
   };
 
   return (
-    <div className="dashboard">
+    <div className="dashboard" ref={dashboardRef}>
       <Joyride steps={steps} continuous={true} showProgress={true} showSkipButton={true} />
 
-      <button className="share-button" onClick={handleShare}>Share</button> {/* Share button at top right */}
+      <button className="share-button" onClick={handleShare}>Share</button>
 
       <div className="statistics">
         <div className="stat-item">
@@ -241,8 +248,9 @@ const Dashboard = () => {
           </ResponsiveContainer>
         </div>
       </div>
-      <button className="update-button update-average-button" onClick={handleClassAverageUpdate}>Update Class Average</button>
-      <button className="update-button enter-score-button" onClick={() => setIsFormVisible(true)}>Enter Your Score</button>
+
+      <button className="update-average-button" onClick={handleClassAverageUpdate}>Update Class Average</button>
+      <button className="enter-score-button" onClick={() => setIsFormVisible(true)}>Enter Your Score</button>
 
       {isFormVisible && (
         <div className="form-popup">
@@ -288,7 +296,7 @@ const Dashboard = () => {
         </div>
       )}
 
-      <div className="charts" ref={chartRef}> {/* Add ref to chart div */}
+      <div className="charts">
         <div className="chart">
           <h3>Comparison Graph</h3>
           <ResponsiveContainer width="95%" height={350}>
